@@ -1,8 +1,8 @@
-# Animated Keycode Detector ⌨️✨
+# Animated Keycode Detector ⌨️
 
 A lightweight browser-based keyboard event inspector built with vanilla HTML, CSS, and JavaScript.
 
-It turns every keyboard press into readable event data while keeping the original animated visual experience.
+Press any key to inspect the keyboard event your browser receives, including its key, code, legacy keyCode, location, modifiers, and repeat state.
 
 ## 🌐 Live Demo
 
@@ -15,13 +15,14 @@ https://shivamsinghrajputtt.github.io/Animated-Keycode-Detector/
 - Shows legacy `keyCode` for reference
 - Identifies standard, left, right, and numpad key locations
 - Detects Ctrl, Shift, Alt, and Meta modifiers
+- Shows repeat state for held keys
 - Animated visual feedback for each key press
-- Copy the current event details to the clipboard
-- Reset the inspector to its initial state
+- Copies the current event details to the clipboard
+- Resets the inspector to its initial state
 - Responsive layout for desktop and smaller screens
 - Accessible status updates for keyboard-event changes
 - Respects `prefers-reduced-motion`
-- Automated Node.js tests and GitHub Actions CI
+- Automated Node.js tests with GitHub Actions CI
 
 ## 🛠️ Tech Stack
 
@@ -42,7 +43,7 @@ npx serve .
 
 Then open the local URL and press a key.
 
-For the utility test suite:
+Run the test suite with:
 
 ```bash
 npm test
@@ -50,9 +51,9 @@ npm test
 
 ## 🧠 What this project demonstrates
 
-This project focuses on browser keyboard events and the difference between `event.key`, `event.code`, `event.location`, modifier flags, and the legacy `event.keyCode` property.
+This project demonstrates the differences between `event.key`, `event.code`, `event.location`, modifier flags, the legacy `event.keyCode` property, and keyboard repeat events.
 
-The event-normalization logic lives in `src/keycode.js`, making the core behavior independently testable from the DOM UI.
+The event-normalization logic lives in `src/keycode.js`, keeping the core behavior independently testable from the DOM UI.
 
 ## 📁 Project structure
 
@@ -66,6 +67,9 @@ The event-normalization logic lives in `src/keycode.js`, making the core behavio
 ├── script.js
 ├── style.css
 ├── package.json
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── LICENSE
 └── README.md
 ```
 
@@ -75,4 +79,12 @@ The app uses standard browser keyboard-event APIs and the Clipboard API for the 
 
 ## 📄 License
 
-No license file is currently included in the repository.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for the full license text.
+
+## 🤝 Contributing
+
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+## 🔐 Security
+
+For security-related reports, please read [SECURITY.md](SECURITY.md).
