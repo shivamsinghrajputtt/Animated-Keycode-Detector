@@ -4,6 +4,10 @@ A lightweight browser-based keyboard event inspector built with vanilla HTML, CS
 
 It turns every keyboard press into readable event data while keeping the original animated visual experience.
 
+## 🌐 Live Demo
+
+https://shivamsinghrajputtt.github.io/Animated-Keycode-Detector/
+
 ## ✨ Features
 
 - Detects keyboard `keydown` events in real time
@@ -15,6 +19,7 @@ It turns every keyboard press into readable event data while keeping the origina
 - Copy the current event details to the clipboard
 - Reset the inspector to its initial state
 - Responsive layout for desktop and smaller screens
+- Accessible status updates for keyboard-event changes
 - Respects `prefers-reduced-motion`
 - Automated Node.js tests and GitHub Actions CI
 
@@ -22,9 +27,10 @@ It turns every keyboard press into readable event data while keeping the origina
 
 - HTML5
 - CSS3
-- Vanilla JavaScript (ES modules)
+- Vanilla JavaScript
 - Node.js built-in test runner
 - GitHub Actions
+- GitHub Pages
 
 ## 🚀 Run locally
 
@@ -55,6 +61,7 @@ The event-normalization logic lives in `src/keycode.js`, making the core behavio
 ├── .github/workflows/ci.yml
 ├── src/keycode.js
 ├── test/keycode.test.js
+├── favicon.svg
 ├── index.html
 ├── script.js
 ├── style.css
