@@ -7,6 +7,7 @@ const fields = {
   keyCode: document.querySelector('[data-field="keyCode"]'),
   location: document.querySelector('[data-field="location"]'),
   modifiers: document.querySelector('[data-field="modifiers"]'),
+  repeat: document.querySelector('[data-field="repeat"]'),
 };
 const copyButton = document.querySelector("#copyButton");
 const resetButton = document.querySelector("#resetButton");
@@ -63,6 +64,7 @@ function renderKey(event) {
   fields.keyCode.textContent = details.keyCode;
   fields.location.textContent = details.location;
   fields.modifiers.textContent = formatModifiers(details);
+  fields.repeat.textContent = details.repeat ? "Yes" : "No";
   body.style.background = randomGradient();
 
   box.classList.remove("key-pressed");
@@ -79,6 +81,7 @@ copyButton.addEventListener("click", async () => {
     `Legacy keyCode: ${fields.keyCode.textContent}`,
     `Location: ${fields.location.textContent}`,
     `Modifiers: ${fields.modifiers.textContent}`,
+    `Repeat: ${fields.repeat.textContent}`,
   ].join("\n");
 
   try {
@@ -95,6 +98,7 @@ resetButton.addEventListener("click", () => {
   fields.keyCode.textContent = "—";
   fields.location.textContent = "—";
   fields.modifiers.textContent = "None";
+  fields.repeat.textContent = "No";
   body.style.background = "linear-gradient(135deg, #00c6ff, #0072ff)";
   box.classList.remove("key-pressed");
   setStatus("Ready — press any key");
