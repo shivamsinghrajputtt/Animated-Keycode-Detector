@@ -142,6 +142,11 @@ button:active { transform: translateY(1px); }
 button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 button.secondary { color: #fff; background: rgba(255, 255, 255, 0.14); }
 
+/* Keep the public demo focused on the keyboard inspector. */
+footer {
+  display: none !important;
+}
+
 .noscript-message {
   width: min(920px, calc(100% - 36px));
   margin: 0 auto 24px;
