@@ -60,4 +60,29 @@ test("missing browser fields have safe fallbacks", () => {
   assert.equal(details.keyCode, 0);
   assert.equal(details.location, "Standard");
   assert.equal(formatModifiers(details), "None");
+  assert.equal(details.repeat, false);
+});
+
+test("held keys preserve repeat state", () => {
+  const details = getKeyDetails({
+    key: "ArrowDown",
+    code: "ArrowDown",
+    keyCode: 40,
+    location: 0,
+    repeat: true,
+  });
+
+  assert.equal(details.repeat, true);
+});
+
+test("modifier defaults are safe when browser flags are omitted", () => {
+  const details = getKeyDetails({ key: "Enter", code: "Enter" });
+
+  assert.deepEqual(details.modifiers, []);
+  assert.equal(formatModifiers(details), "None");
+});
+
+test("right-side and numpad locations remain distinguishable", () => {
+  assert.equal(getKeyDetails({ key: "Shift", location: 2 }).location, "Right");
+  assert.equal(getKeyDetails({ key: "1", location: 3 }).location, "Numpad");
 });
