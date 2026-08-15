@@ -1,5 +1,7 @@
 # Animated Keycode Detector ⌨️
 
+[![CI](https://github.com/shivamsinghrajputtt/Animated-Keycode-Detector/actions/workflows/ci.yml/badge.svg)](https://github.com/shivamsinghrajputtt/Animated-Keycode-Detector/actions/workflows/ci.yml)
+
 A lightweight browser-based keyboard event inspector built with vanilla HTML, CSS, and JavaScript.
 
 Press any key to inspect the keyboard event your browser receives, including its key, code, legacy keyCode, location, modifiers, and repeat state.
