@@ -3,17 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A modern keyboard event inspector that displays key, code, keyCode, location, and modifier information." />
   <title>Animated Keycode Detector</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎹 Press Any Key to See Magic!</h1>
-  <div class="box">
-    <div class="key">—</div>
-    <div class="code">KeyCode: —</div>
-  </div>
-  <footer>Made with ❤️ by Shivam</footer>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Keyboard Event Inspector</p>
+      <h1>Press any key to see the magic.</h1>
+      <p class="subtitle">Explore exactly what your browser receives from every keyboard event.</p>
+    </header>
 
+    <section class="box" aria-label="Keyboard event details">
+      <div class="key" aria-live="polite">—</div>
+      <p class="status" role="status">Ready — press any key</p>
+
+      <dl class="details-grid">
+        <div class="detail-card"><dt>Code</dt><dd data-field="code">—</dd></div>
+        <div class="detail-card"><dt>Legacy keyCode</dt><dd data-field="keyCode">—</dd></div>
+        <div class="detail-card"><dt>Location</dt><dd data-field="location">—</dd></div>
+        <div class="detail-card"><dt>Modifiers</dt><dd data-field="modifiers">None</dd></div>
+      </dl>
+
+      <div class="actions">
+        <button id="copyButton" type="button">Copy details</button>
+        <button id="resetButton" class="secondary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <p class="hint">Tip: Try letters, arrows, function keys, Space, Enter, and modifier combinations.</p>
+  </main>
+
+  <footer>Built with HTML, CSS &amp; JavaScript · Shivam</footer>
   <script src="script.js"></script>
 </body>
 </html>
