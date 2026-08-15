@@ -1,3 +1,5 @@
+import { formatModifiers, getKeyDetails } from "./src/keycode.js";
+
 const keyDiv = document.querySelector(".key");
 const statusDiv = document.querySelector(".status");
 const body = document.body;
@@ -11,41 +13,6 @@ const fields = {
 };
 const copyButton = document.querySelector("#copyButton");
 const resetButton = document.querySelector("#resetButton");
-
-const LOCATION_NAMES = {
-  0: "Standard",
-  1: "Left",
-  2: "Right",
-  3: "Numpad",
-};
-
-function getLocationName(location = 0) {
-  return LOCATION_NAMES[location] || "Unknown";
-}
-
-function getModifiers(event) {
-  const modifiers = [];
-  if (event.ctrlKey) modifiers.push("Ctrl");
-  if (event.shiftKey) modifiers.push("Shift");
-  if (event.altKey) modifiers.push("Alt");
-  if (event.metaKey) modifiers.push("Meta");
-  return modifiers;
-}
-
-function getKeyDetails(event) {
-  return {
-    key: event.key === " " ? "Space" : event.key,
-    code: event.code || "—",
-    keyCode: event.keyCode || 0,
-    location: getLocationName(event.location),
-    modifiers: getModifiers(event),
-    repeat: Boolean(event.repeat),
-  };
-}
-
-function formatModifiers(details) {
-  return details.modifiers.length ? details.modifiers.join(" + ") : "None";
-}
 
 function randomGradient() {
   const hue = Math.floor(Math.random() * 360);
