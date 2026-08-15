@@ -55,11 +55,16 @@ This project demonstrates the differences between `event.key`, `event.code`, `ev
 
 The event-normalization logic lives in `src/keycode.js`, keeping the core behavior independently testable from the DOM UI.
 
+## 🏗️ Architecture
+
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the application data flow, module responsibilities, design decisions, and testing strategy.
+
 ## 📁 Project structure
 
 ```text
 .
 ├── .github/workflows/ci.yml
+├── docs/ARCHITECTURE.md
 ├── src/keycode.js
 ├── test/keycode.test.js
 ├── favicon.svg
