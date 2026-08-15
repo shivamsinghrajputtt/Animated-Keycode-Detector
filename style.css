@@ -142,12 +142,15 @@ button:active { transform: translateY(1px); }
 button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 button.secondary { color: #fff; background: rgba(255, 255, 255, 0.14); }
 
-footer {
-  flex-shrink: 0;
-  margin-top: 24px;
+.noscript-message {
+  width: min(920px, calc(100% - 36px));
+  margin: 0 auto 24px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.35);
   text-align: center;
-  font-size: 0.82rem;
-  opacity: 0.72;
+  font-weight: 700;
 }
 
 @media (max-width: 640px) {
@@ -156,7 +159,6 @@ footer {
   .details-grid { grid-template-columns: 1fr; }
   .actions { flex-direction: column; }
   button { width: 100%; }
-  footer { margin-top: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
