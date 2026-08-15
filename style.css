@@ -12,15 +12,16 @@
 
 body {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 32px 18px 70px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 18px 24px;
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   transition: background 0.6s ease;
 }
 
 .app-shell {
   width: min(920px, 100%);
+  margin: auto;
   text-align: center;
 }
 
@@ -142,20 +143,20 @@ button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 button.secondary { color: #fff; background: rgba(255, 255, 255, 0.14); }
 
 footer {
-  position: fixed;
-  bottom: 14px;
-  left: 0;
-  width: 100%;
+  flex-shrink: 0;
+  margin-top: 24px;
   text-align: center;
   font-size: 0.82rem;
   opacity: 0.72;
 }
 
 @media (max-width: 640px) {
-  body { padding-bottom: 64px; }
+  body { padding: 24px 14px 20px; }
+  .app-shell { margin: 0 auto; }
   .details-grid { grid-template-columns: 1fr; }
   .actions { flex-direction: column; }
   button { width: 100%; }
+  footer { margin-top: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
