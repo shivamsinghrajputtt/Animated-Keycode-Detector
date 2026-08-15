@@ -5,7 +5,7 @@ const LOCATION_NAMES = {
   3: "Numpad",
 };
 
-export function getLocationName(location) {
+export function getLocationName(location = 0) {
   return LOCATION_NAMES[location] || "Unknown";
 }
 
